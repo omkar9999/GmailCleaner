@@ -22,6 +22,10 @@ Google permanently deletes mails from Trash after 30 days.
 You can add a gmail query.More info on Gmail Queries Given below-
 * [Gmail Query Search](https://support.google.com/mail/answer/7190?hl=en)
 
+The script is efficient version of the code snippet from following blog post-
+
+[A cleaning robot for your Gmail inbox](https://medium.com/@fw3d/a-cleaning-robot-for-your-gmail-inbox-f44c01306ea2)
+
 ## Technology/Framework
 
 * [Google Apps Script](https://developers.google.com/apps-script/)

@@ -20,31 +20,32 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-
 function cleanMailBox() {
-  // check the category Gmail added to the thread
-  var searches= ['{category:promotions category:Social category:Updates category:Forums} -in:Trash -is:starred -is:important -has:attachment older_than:7d is:unread'];
-  
-  // creating an array containing all the threads matching the searches above
-  var threads = [];
-  for (var i = 0; i < searches.length; i++) {
+    // check the category Gmail added to the thread
+    var searches = [
+        '{category:promotions category:Social category:Updates category:Forums} -in:Trash -is:starred -is:important -has:attachment older_than:7d is:unread'
+    ];
+    // creating an array containing all the threads matching the searches above
+    var threads = [];
+    for (var i = 0; i < searches.length; i++) {
         var tmp_threads = GmailApp.search(searches[i], 0, 200); // Limiting the search to 200 results but its adjustable to certain extent
-        threads = threads.concat(tmp_threads);
-  }
-  console.info('Search Query returned %d Gmail Threads', threads.length);
-  // we split the array if its size more than 100 
-  if(threads.length >100){
-   var splitThreads = [];
-   for (var i = 0; i < threads.length; i++) {
-    splitThreads.push(threads[i]);
-     if (i==99 || i == threads.length-1){
-         GmailApp.moveThreadsToTrash(splitThreads);
-         console.info('Moved %d threads to trash',splitThreads.length);
-         splitThreads=[];
+        threads = threads.concat(
+            tmp_threads);
     }
-  }
-  }else{
-      GmailApp.moveThreadsToTrash(threads);
-      console.info('Moved %d threads to trash',threads.length);
-  }
+    console.info('Search Query returned %d Gmail Threads', threads.length);
+    // we split the array if its size more than 100 
+    if (threads.length > 100) {
+        var splitThreads = [];
+        for (var i = 0; i < threads.length; i++) {
+            splitThreads.push(threads[i]);
+            if (i == 99 || i == threads.length - 1) {
+                GmailApp.moveThreadsToTrash(splitThreads);
+                console.info('Moved %d threads to trash', splitThreads.length);
+                splitThreads = [];
+            }
+        }
+    } else {
+        GmailApp.moveThreadsToTrash(threads);
+        console.info('Moved %d threads to trash', threads.length);
+    }
 }

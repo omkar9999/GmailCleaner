@@ -28,7 +28,7 @@ function cleanMailBox() {
   // creating an array containing all the threads matching the searches above
   var threads = [];
   for (var i = 0; i < searches.length; i++) {
-        var tmp_threads = GmailApp.search(searches[i], 0, 50); // I limit the search to 50 results but you can adjust this one
+        var tmp_threads = GmailApp.search(searches[i], 0, 200); // Limiting the search to 200 results but its adjustable to certain extent
         threads = threads.concat(tmp_threads);
   }
   console.info('Search Query returned %d Gmail Threads', threads.length);

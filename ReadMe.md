@@ -26,9 +26,10 @@ The script is efficient version of the code snippet from following blog post-
 
 [A cleaning robot for your Gmail inbox](https://medium.com/@fw3d/a-cleaning-robot-for-your-gmail-inbox-f44c01306ea2)
 
-## Technology/Framework
+## Technology/Framework/Tools
 
 * [Google Apps Script](https://developers.google.com/apps-script/)
+* [Manage Google App Script code with github/Bitbucket](https://github.com/leonhartX/gas-github)
 
 ## Getting Started
 

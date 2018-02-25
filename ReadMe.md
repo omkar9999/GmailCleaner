@@ -19,7 +19,7 @@ For example, I star all my important email threads which won't be deleted by the
 Google permanently deletes mails from Trash after 30 days.
 * [Delete or recover deleted Gmail messages](https://support.google.com/mail/answer/7401?co=GENIE.Platform%3DDesktop&hl=en)
 
-You can add a gamail query.More info on Gmail Queries Given below-
+You can add a gmail query.More info on Gmail Queries Given below-
 * [Gmail Query Search](https://support.google.com/mail/answer/7190?hl=en)
 
 ## Technology/Framework

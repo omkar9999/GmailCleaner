@@ -28,7 +28,7 @@ function cleanMailBox() {
     // creating an array containing all the threads matching the searches above
     var threads = [];
     for (var i = 0; i < searches.length; i++) {
-        var tmp_threads = GmailApp.search(searches[i], 0, 200); // Limiting the search to 200 results but its adjustable to certain extent
+        var tmp_threads = GmailApp.search(searches[i], 0, 200); // Limiting the search to 200 results but its adjustable to certain extent.  NB: Maximum is 500
         threads = threads.concat(
             tmp_threads);
     }
@@ -38,7 +38,7 @@ function cleanMailBox() {
         var splitThreads = [];
         for (var i = 0; i < threads.length; i++) {
             splitThreads.push(threads[i]);
-            if (i == 99 || i == threads.length - 1) {
+            if (String(i).endsWith('99') || i == threads.length - 1) {
                 GmailApp.moveThreadsToTrash(splitThreads);
                 console.info('Moved %d threads to trash', splitThreads.length);
                 splitThreads = [];

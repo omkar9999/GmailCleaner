@@ -1,15 +1,19 @@
 # Gmail Cleaner
 
+*Forked from https://github.com/omkar9999/GmailCleaner (Thanks Omar :smiley:) and updated to my preferences and to fix an error with thread counts greater than 200.*
+
 This script will help you delete old emails inside your Gmail Mailbox by moving them to trash.
 It deletes emails based on the Gmail Queries mentioned inside searches.
 The default script will delete the emails that are-
-1) Inside default Gmail Cetegories
-2) Unread
-3) Not starred
-4) Not in Trash
-5) Don't have attachments
-6) Not marked important
-7) Older than 7 days
+1) Not in your inbox (including Google Categories)
+2) Not in Sent Items
+3) Not in Chats
+4) Not in Drafts
+5) Not in Trash
+6) Not starred
+7) Not marked important
+8) Don't have attachments
+9) Older than 2 years
 
 The default filters are kept in place to keep your important emails safe.
 So, please ensure that your important emails don't match all the above criteria.
@@ -47,6 +51,7 @@ with Apps Script, take a look at the following resources:
 ## Authors
 
 * **Omkar Marathe** - *Initial work* - [Omkar](https://github.com/omkar9999/)
+* **Pete Shaw** (Cockney Rhyming Jedi) - *amendments and logic correction* - [Cockney Rhyming Jedi](https://github.com/CockneyRhymingJedi)
 
 ## Support/Contributing
 

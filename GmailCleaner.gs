@@ -23,12 +23,12 @@ SOFTWARE.
 function cleanMailBox() {
     // check the category Gmail added to the thread
     var searches = [
-        '{category:promotions category:Social category:Updates category:Forums} -in:Trash -is:starred -is:important -has:attachment older_than:7d is:unread'
+        '-in:inbox -in:sent -in:chat -in:drafts -is:trash -is:starred -is:important -has:attachment older_than:2y'
     ];
     // creating an array containing all the threads matching the searches above
     var threads = [];
     for (var i = 0; i < searches.length; i++) {
-        var tmp_threads = GmailApp.search(searches[i], 0, 200); // Limiting the search to 200 results but its adjustable to certain extent
+        var tmp_threads = GmailApp.search(searches[i], 0, 500); // Limiting the search to 200 results but its adjustable to certain extent.  NB: Maximum is 500
         threads = threads.concat(
             tmp_threads);
     }
@@ -38,7 +38,8 @@ function cleanMailBox() {
         var splitThreads = [];
         for (var i = 0; i < threads.length; i++) {
             splitThreads.push(threads[i]);
-            if (i == 99 || i == threads.length - 1) {
+            if (String(i).endsWith('99') || i == threads.length - 1) {
+                console.info('i is at %d', i); // Trouble-shooting step, can be removed
                 GmailApp.moveThreadsToTrash(splitThreads);
                 console.info('Moved %d threads to trash', splitThreads.length);
                 splitThreads = [];
